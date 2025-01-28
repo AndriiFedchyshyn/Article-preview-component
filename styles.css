@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+  --avatar-size: 2rem;
+  --button-size: 2rem;
+  --icon-size: 1rem;
+}
+
+body {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-size: 1rem;
+  font-style: normal;
+  background-color: var(--Light-Grayish-Blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  width: 61rem;
+  height: 22rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  background: url(images/drawers.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px 0 0 10px;
+}
+
+.description {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description h1 {
+  font-size: 1.7rem;
+  color: var(--Very-Dark-Grayish-Blue);
+  line-height: 1.5;
+}
+
+.description p {
+  font-size: 1rem;
+  color: var(--Grayish-Blue);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  margin-top: 1rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.info p {
+  margin-left: 1rem;
+}
+
+span {
+  font-weight: 800;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+.avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+button {
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 50%;
+  border: none;
+  background-color: var(--Light-Grayish-Blue);
+  transition: filter 0.5s ease-in-out;
+}
+
+.share-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  transition: filter 0.5s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.share-container {
+  position: relative;
+}
+
+.share-menu {
+  display: none;
+  position: absolute;
+  bottom: 3.125rem;
+  left: -5rem;
+  background: var(--Very-Dark-Grayish-Blue);
+  color: var(--Grayish-Blue);
+  border-radius: 10px;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+  padding: 0.7rem 2rem;
+  gap: 0.625rem;
+  align-items: center;
+  z-index: 1;
+
+}
+
+.share-menu img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-right: 0.2rem;
+}
+
+.share-menu p {
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+}
+
+.triangle {
+  position: absolute;
+  left: 75px;
+  top: 35px;
+  width: 0;
+  height: 0;
+  border-left: 1.3125rem solid transparent; /* 21px */
+  border-right: 1.3125rem solid transparent; /* 21px */
+  border-top: 1.3125rem solid var(--Very-Dark-Grayish-Blue); /* 21px */
+}
+
+.active {
+  background-color: var(--Desaturated-Dark-Blue);
+}
+
+.bright {
+  filter: brightness(500%);
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    flex-direction: column;
+    width: 30rem;
+    height: 45rem;
+    align-items: center;
+  }
+  .header {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .description {
+    height: 100%;
+    padding: 2.5rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .description h1 {
+    line-height: 1.5;
+  }
+
+  .description p {
+    font-size: 1.2rem;
+  }
+
+  .avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .share-menu {
+    display: none;
+    position: absolute;
+    bottom: -25px;
+    left: -415px;
+    border-radius: 0 0 10px 10px;
+    padding: 1.5rem 9rem 1.5rem 3rem;
+    justify-content: space-between;
+    z-index: 0;
+  }
+  .share-menu img {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0 1rem;
+  }
+
+  .share {
+    position: relative;
+    z-index: 1;
+  }
+
+  .triangle {
+    display: none;
+  }
+}
